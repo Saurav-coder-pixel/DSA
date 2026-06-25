@@ -12,11 +12,16 @@ class Solution {
         
         int maxSum= sum;
         
-        while(right< n){
-            sum= sum + arr[right]- arr[left];
-            maxSum= Math.max(maxSum, sum);
-            left++;
-            right++;
+        // while(right< n){
+        //     sum= sum + arr[right]- arr[left];
+        //     maxSum= Math.max(maxSum, sum);
+        //     left++;
+        //     right++;
+        // }
+
+        for (int i = k; i < n; i++) {
+            sum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, sum);
         }
         
         return maxSum;
